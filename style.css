@@ -1,0 +1,330 @@
+@import url(https://fonts.googleapis.com/css?family=IM+Fell+French+Canon+SC);
+
+body {
+  padding-top: 10px;
+  background: #000;
+}
+
+.container {
+  position: relative;
+  width: 400px;
+  height: 400px;
+  margin: 40px auto;
+  transition: all 1s ease-in-out;
+  transform: rotate(50deg);
+}
+
+.container:hover {
+  transform: rotate(0deg);
+}
+
+.face {
+  text-align: center;
+  background: rgba(255, 200, 30, 1);
+  width: 400px;
+  height: 400px;
+  line-height: 360px;
+  padding: 0px;
+  margin: 0px;
+  display: block;
+  font-size: 1550%;
+  font-weight: lighter;
+  font-family: IM Fell French Canon SC, Times, serif;
+  border-radius: 400px;
+  box-shadow: inset 14px 14px 10px rgba(255, 255, 255, .3), inset -18px -18px 16px rgba(0, 0, 0, 0.3), 10px 10px 16px rgba(0, 0, 0, .5);
+
+}
+
+.face ul {
+  display: block;
+  width: 300px;
+  height: 400px;
+  margin: 0px;
+}
+
+.face ul li {
+  display: inline-block;
+  margin: -24px;
+  width: 100px;
+  height: 100px;
+  background: black;
+  border-radius: 50px;
+  transform: translate(54px, -90px) rotateY(74deg);
+  box-shadow: 1px 1px 12px rgba(0, 0, 0, .2);
+}
+
+.face ul li#mouthLeft {
+  width: 40px;
+  height: 42px;
+  transform: translate(-185px, 6px) rotateX(-110deg) rotateY(32deg) rotateZ(60deg);
+}
+
+.face ul li#mouthRight {
+  width: 40px;
+  height: 42px;
+  transform: translate(-10px, 6px) rotateX(110deg) rotateY(32deg) rotateZ(60deg);
+}
+
+.face ul li#mouth {
+  display: block;
+  background: none;
+  box-shadow: none;
+  text-shadow: 1px 0px 4px rgba(0, 0, 0, .2);
+  transform: translate(276px, -80px) rotateX(2deg) rotate(90deg);
+}
+
+.face ul li#mouth:after {
+  content: ")";
+}
+
+.blood {
+  position: absolute;
+  top: 0px;
+  width: 400px;
+  height: 400px;
+}
+
+.blood ul {
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  top: 0px;
+  list-style: none;
+}
+
+/* This is super ugly, but the easiest way I could figure out the shapes for the blood */
+/* long drop */
+.blood ul li {
+  position: absolute;
+  content: "";
+}
+
+.blood ul li#longDrop {
+  width: 230px;
+  height: 7px;
+  top: 158px;
+  left: 23px;
+  background: -webkit-radial-gradient(60px 10px, ellipse farthest-corner, rgb(255, 0, 0) 0%, rgb(200, 0, 0) 50%, rgb(0, 0, 0) 100%);
+  border-radius: 60px 40px;
+  transform: rotateY(-30deg) rotate(36deg);
+  box-shadow: inset 1px 2px 2px rgba(255, 255, 255, .3);
+  z-index: 10;
+}
+
+/* top right small drop*/
+.blood ul li#shortDropTR {
+  width: 6px;
+  height: 42px;
+  top: 90px;
+  left: 90px;
+  border-radius: 10px;
+  box-shadow: inset 1px 2px 2px rgba(255, 255, 255, .3), -1px 1px 2px rgba(0, 0, 0, .7);
+  background: -webkit-radial-gradient(60px 10px, ellipse farthest-corner, rgb(255, 0, 0) 0%, rgb(200, 0, 0) 90%, rgb(0, 0, 0) 100%);
+  transform: rotate(-70deg);
+  z-index: 7;
+}
+
+/* top big drop */
+.blood ul li#bigDropT {
+  width: 49px;
+  height: 64px;
+  top: 78px;
+  left: 44px;
+  border-radius: 50px 100px;
+  transform: rotateX(49deg) rotateY(46deg) rotate(-90deg);
+  background: -webkit-radial-gradient(60px 10px, ellipse farthest-corner, rgb(0, 0, 0) 0%, rgb(200, 0, 0) 50%, rgb(255, 0, 0) 100%);
+  z-index: 11;
+}
+
+/* longDropEnd */
+.blood ul li#longDropEnd {
+  width: 40px;
+  height: 80px;
+  border-radius: 70px;
+  background: -webkit-radial-gradient(40px 10px, ellipse farthest-corner, rgb(255, 0, 0) 0%, rgb(200, 0, 0) 60%, rgba(0, 0, 0, .9) 82%, rgba(255, 255, 255, .6) 98%);
+  top: 172px;
+  left: 172px;
+  z-index: 12;
+  box-shadow: inset -5px -5px 2px rgba(255, 255, 255, 0);
+  transform: rotateY(52deg) rotateX(44deg) rotate(-35deg);
+}
+
+/* yellow cut */
+.blood ul li#yellowCutTR {
+  width: 11px;
+  height: 23px;
+  background: rgba(255, 200, 30, 1);
+  border-radius: 50px;
+  top: 108px;
+  left: 90px;
+  z-index: 8;
+  transform: rotateZ(-65deg);
+}
+
+/* middle short drop */
+.blood ul li#shortDropML {
+  width: 80px;
+  height: 14px;
+  border-radius: 20px 20px;
+  top: 120px;
+  left: 29px;
+  box-shadow: inset -1px 2px 2px rgba(255, 255, 255, .4), -2px 1px 2px rgba(0, 0, 0, .7);
+  background: -webkit-radial-gradient(100px 20px, ellipse farthest-corner, rgb(255, 0, 0) 0%, rgb(200, 0, 0) 60%, rgb(0, 0, 0) 100%);
+  transform: rotate(-120deg);
+  z-index: 5;
+}
+
+/* yellow cut */
+.blood ul li#yellowCutBL {
+  width: 60px;
+  height: 60px;
+  border-radius: 50px;
+  background: rgba(255, 200, 30, 1);
+  top: 111px;
+  left: 39px;
+  z-index: 8;
+  box-shadow: none;
+  transform: rotateX(60deg) rotateY(68deg);
+}
+
+/* yellow cut */
+.blood ul li#yellowCutBM {
+  width: 60px;
+  height: 60px;
+  border-radius: 60px;
+  background: rgba(255, 200, 30, 1);
+  top: 112px;
+  left: 68px;
+  z-index: 12;
+  box-shadow: none;
+  transform: rotateY(66deg) rotateX(46deg);
+}
+
+/* left short drop */
+.blood ul li#shortDropBL {
+  width: 40px;
+  height: 9px;
+  border-radius: 20px 20px;
+  top: 116px;
+  left: 37px;
+  box-shadow: inset -1px 2px 2px rgba(255, 255, 255, .4), -2px 1px 2px rgba(0, 0, 0, .7);
+  background: -webkit-radial-gradient(100px 20px, ellipse farthest-corner, rgb(255, 0, 0) 0%, rgb(200, 0, 0) 60%, rgb(0, 0, 0) 100%);
+  transform: rotate(-100deg);
+  z-index: 9;
+}
+
+/* yellow cut */
+.blood ul li#yellowCutBL2 {
+  width: 30px;
+  height: 30px;
+  border-radius: 40px;
+  background: rgba(255, 200, 30, 1);
+  top: 112px;
+  left: 34px;
+  z-index: 11;
+  box-shadow: none;
+  transform: rotateX(2deg) rotateY(-58deg) rotate(-91deg);
+}
+
+/* yellow cut */
+.blood ul li#yellowCutLD {
+  width: 140px;
+  height: 140px;
+  border-radius: 120px;
+  background: rgba(255, 200, 30, 1);
+  top: 180px;
+  left: 133px;
+  z-index: 12;
+  box-shadow: none;
+  transform: rotateY(74deg) rotateX(38deg);
+}
+
+/* yellow cut */
+.blood ul li#yellowCutLD2 {
+  width: 32px;
+  height: 32px;
+  border-radius: 100px;
+  background: rgba(255, 200, 30, 1);
+  top: 179px;
+  left: 150px;
+  z-index: 12;
+  box-shadow: none;
+  transform: rotateY(70deg) rotateX(42deg);
+}
+
+/* yellow cut */
+.blood ul li#yellowCutLD3 {
+  width: 32px;
+  height: 32px;
+  border-radius: 100px;
+  background: rgba(255, 200, 30, 1);
+  top: 190px;
+  left: 161px;
+  z-index: 12;
+  box-shadow: none;
+  transform: rotateY(70deg) rotateX(42deg);
+}
+
+.highlight {
+  background: -webkit-radial-gradient(10px 10px, ellipse, rgb(255, 255, 255) 0%, rgba(255, 255, 255, .8) 30%, rgba(255, 255, 255, 0) 100%);
+
+  border-radius: 10px;
+  z-index: 20;
+}
+
+.blood ul li#highlight1 {
+  width: 20px;
+  height: 20px;
+  top: 94px;
+  left: 42px;
+  transform: rotateX(60deg) rotateY(60deg);
+}
+
+.blood ul li#highlight2 {
+  width: 4px;
+  height: 4px;
+  top: 132px;
+  left: 56px;
+  transform: rotateX(30deg) rotateY(60deg);
+}
+
+.blood ul li#highlight3 {
+  width: 8px;
+  height: 8px;
+  top: 142px;
+  left: 76px;
+  transform: rotateX(50deg) rotateY(60deg);
+}
+
+.blood ul li#highlight4 {
+  width: 20px;
+  height: 10px;
+  top: 212px;
+  left: 190px;
+  transform: rotateX(30deg) rotateY(60deg);
+}
+
+.blood ul li#highlight5 {
+  width: 8px;
+  height: 8px;
+  top: 108px;
+  left: 58px;
+  transform: rotateX(30deg) rotateY(60deg);
+}
+
+.blood ul li#highlight6 {
+  width: 6px;
+  height: 6px;
+  top: 224px;
+  left: 206px;
+  transform: rotateX(30deg) rotateY(60deg);
+}
+
+.blood ul li#highlight7 {
+  width: 6px;
+  height: 6px;
+  top: 194px;
+  left: 176px;
+  transform: rotateX(40deg) rotateY(40deg);
+}
